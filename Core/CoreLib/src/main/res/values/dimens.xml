@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Constraint -->
+    <dimen name="constraint_match_parent">0dp</dimen>
+
+    <!-- Offsets -->
+    <dimen name="offset_medium">16dp</dimen>
+
+</resources>

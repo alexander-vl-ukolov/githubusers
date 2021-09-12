@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Templates -->
+    <string name="user_metadata_blog_template">Блог: %1$s</string>
+    <string name="user_metadata_company_template">Компания: %1$s</string>
+    <string name="user_metadata_location_template">Местоположение: %1$s</string>
+    <string name="user_metadata_email_template">Электронная почта: %1$s</string>
+    <string name="user_metadata_login_template">Логин: %1$s</string>
+    <string name="user_metadata_name_template">Имя: %1$s</string>
+
+</resources>

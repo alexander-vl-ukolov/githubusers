@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.immortalalexsan.githubusers"
+
+        minSdk 21
+        targetSdk 31
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+    // Ktx
+    def core_ktx_version = "1.6.0"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+
+    // Appcompat
+    def appcompat_version = "1.3.1"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    // Material
+    def material_version = "1.4.0"
+    implementation "com.google.android.material:material:$material_version"
+
+    // ConstraintLayout
+    def constraint_layout_version = "2.1.0"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    // Legacy
+    def legacy_support_version = "1.0.0"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
+
+    // RecyclerView
+    def recycler_view_version = "1.2.1"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+
+    // Lifecycle
+    def lifecycle_version = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // Room
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava3:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+
+    // OkHttp
+    def okhttp_version = "4.9.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // Dagger
+    def dagger_version = "2.28.3"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    // Picasso
+    def picasso_version = "2.8"
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+
+    // RxKotlin
+    def rx_kotlin_version = "3.0.1"
+    implementation "io.reactivex.rxjava3:rxkotlin:$rx_kotlin_version"
+
+    // RxAndroid
+    def rx_android_version = "3.0.0"
+    implementation "io.reactivex.rxjava3:rxandroid:$rx_android_version"
+
+    // Adapter delegates
+    def adapter_delegates_version = "4.3.0"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapter_delegates_version"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapter_delegates_version"
+
+    // Shimmer
+    def shimmer_version = "0.5.0"
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    // Activity
+    def activity_version = "1.3.1"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    // Fragment
+    def fragment_version = "1.3.6"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    // Navigation component
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+
+    // Core
+    implementation project(":CoreLib")
+
+    // Local tests
+    testImplementation 'junit:junit:4.+'
+
+    // Android tests
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

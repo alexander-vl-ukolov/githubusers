@@ -1,0 +1,29 @@
+void includeApiImplModules(String moduleBaseName, String modulesTopLevelDirectory, String modulesRelativePath) {
+    String modulesBasePath = buildModulePath(modulesTopLevelDirectory, modulesRelativePath)
+    String apiModuleName = "${moduleBaseName}Api"
+    String implModuleName = "${moduleBaseName}Impl"
+    includeSubproject(apiModuleName, "${modulesBasePath}/${apiModuleName}")
+    includeSubproject(implModuleName, "${modulesBasePath}/${implModuleName}")
+}
+
+void includeSingleModule(String moduleName, String moduleTopLevelDirectory, String moduleRelativePath) {
+    String modulePath = buildModulePath(moduleTopLevelDirectory, moduleRelativePath)
+    includeSubproject(moduleName, modulePath)
+}
+
+void includeSubproject(String moduleName, String moduleRelativePath) {
+    include ":$moduleName"
+    project(":$moduleName").projectDir = new File(moduleRelativePath)
+}
+
+static String buildModulePath(String moduleTopLevelDirectory, String moduleRelativePath) {
+    "${moduleTopLevelDirectory}/${moduleRelativePath}"
+}
+
+ext {
+    includeApiImplModules = this.&includeApiImplModules
+    includeSingleModule = this.&includeSingleModule
+
+    CORE_LIB_DIR = "Core"
+    FEATURES_LIB_DIR = "Features"
+}

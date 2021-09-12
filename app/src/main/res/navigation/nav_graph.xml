@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.immortalalexsan.githubusers.presentation.users.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users">
+
+        <action
+            android:id="@+id/action_usersFragment_to_userMetadataFragment"
+            app:destination="@+id/userMetadataFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userMetadataFragment"
+        android:name="com.immortalalexsan.githubusers.presentation.usermetadata.UserMetadataFragment"
+        android:label="fragment_user_metadata"
+        tools:layout="@layout/fragment_user_metadata">
+
+        <argument
+            android:name="userLogin"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

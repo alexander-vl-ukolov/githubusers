@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.immortalalexsan.githubusers.presentation.usermetadata.UserMetadataFragment">
+
+    <ImageView
+        android:id="@+id/avatar_image_view"
+        android:layout_width="@dimen/user_avatar_size"
+        android:layout_height="@dimen/user_avatar_size"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/login_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_image_view"
+        tools:text="Login" />
+
+    <TextView
+        android:id="@+id/name_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_view"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/company_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_text_view"
+        tools:text="Company" />
+
+    <TextView
+        android:id="@+id/blog_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_text_view"
+        tools:text="Blog" />
+
+    <TextView
+        android:id="@+id/location_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blog_text_view"
+        tools:text="Location" />
+
+    <TextView
+        android:id="@+id/email_text_view"
+        style="@style/GitHub.Widget.TextView.ListItem.SingleLine"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/offset_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_text_view"
+        tools:text="Email" />
+
+    <include
+        android:id="@+id/progress_bar_layout"
+        layout="@layout/progress_bar_fragment_user_metadata"
+        android:layout_width="@dimen/constraint_match_parent"
+        android:layout_height="@dimen/constraint_match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
